@@ -23,6 +23,31 @@ Route::get('ready', function () {
 Route::get('window', function () {
     return view('jquerytutorials/windowfunctionwithidselector');
 });
-Route::get('selector', function () {
+Route::get('element', function () {
     return view('jquerytutorials/elementselector');
 });
+Route::get('class', function () {
+    return view('jquerytutorials/classselector');
+});
+Route::get('attribute', function () {
+    return view('jquerytutorials/attributeselector');
+});
+Route::get('caseselector', function () {
+    return view('jquerytutorials/caseinsensitiveattrsel');
+});
+Route::get('eachfunction', function () {
+    return view('jquerytutorials/eachfunction');
+});
+Route::get('methodchain', function () {
+    return view('jquerytutorials/methodchaining');
+});
+Route::get('json', function () {
+    return view('jquerytutorials/json');
+});
+Route::get('jsonmultiple', function () {
+    return view('jquerytutorials/jsonmultiple');
+});
+Route::get('jsonobject', function () {
+    return view('jquerytutorials/jsonobjecttostring');
+});
+
