@@ -50,4 +50,19 @@ Route::get('jsonmultiple', function () {
 Route::get('jsonobject', function () {
     return view('jquerytutorials/jsonobjecttostring');
 });
+Route::get('map', function () {
+    return view('jquerytutorials/mapmethod');
+});
+Route::get('changeevent', function () {
+    return view('jquerytutorials/changeevent');
+});
+Route::get('mouseevent', function () {
+    return view('jquerytutorials/mouseevent');
+});
+Route::get('scrollevent', function () {
+    return view('jquerytutorials/scrollevent');
+});
+Route::get('image', function () {
+    return view('jquerytutorials/imagegallery');
+});
 
