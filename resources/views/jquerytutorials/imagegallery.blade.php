@@ -14,6 +14,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
         $(document).ready(function(){
+            $("#mountain").css("height","700px")
+                          .css("width","1137px")
+            $("img.img-fluid.img-thumbnail.images")
+                .css("height","150px")
+                .css("width","159px")
+                .on({
+                    mouseover:function(){
+                        $(this).css({
+                            'cursor':'pointer',
+                            'border-color':'blue'
+                        });
+                    },
+                    mouseout:function(){
+                        $(this).css({
+                            'cursor':'default',
+                            'border-color':''
+                        });
+                    },
+                    click:function(){
+                        var replaceimage=$(this).attr('src');
+                        $("#mountain").fadeOut(300, function(){
+                            $(this).attr('src',replaceimage);
+
+                        }).fadeIn(1000);
+                       /* var replaceimage=$(this).attr('src');
+                        $("#mountain").attr('src',replaceimage);
+
+                        }*/
+                    }
+                });
             
         });       
     </script>
@@ -22,13 +52,17 @@
     <div class="container">
         <div class="row">
             <picture>
-                <img id="mounatin"src="/images/mountain.jpg" class="img-fluid img-thumbnail" alt="imagess">
+                <img id="mountain" src="/images/mountain.jpg" class="img-fluid img-thumbnail" alt="imagess">
             </picture>
             <picture>
-                    <img id="rho1"src="/images/flower1.jpg" class="img-fluid img-thumbnail" alt="imagess">
-                    <img id="rho2"src="/images/flower2.jpg" class="img-fluid img-thumbnail" alt="imagess">
-                    <img id="rho3"src="/images/rho1.jpg" class="img-fluid img-thumbnail" alt="imagess">
-                    <img id="rho4"src="/images/flower3.jpg" class="img-fluid img-thumbnail" alt="imagess">
+                    <img src="/images/flower1.jpg" class="img-fluid img-thumbnail images" alt="img1">
+                    <img src="/images/flower2.jpg" class="img-fluid img-thumbnail images" alt="img2">
+                    <img src="/images/roh1.jpg" class="img-fluid img-thumbnail images" alt="img3">
+                    <img src="/images/flower3.jpg" class="img-fluid img-thumbnail images" alt="img4">
+                    <img src="/images/flower1.jpg" class="img-fluid img-thumbnail images" alt="img5">
+                    <img src="/images/flower1.jpg" class="img-fluid img-thumbnail images" alt="img6">
+                    <img src="/images/mountain.jpg" class="img-fluid img-thumbnail images" alt="imagess">
+                    
             </picture>
         </div>
     </div>

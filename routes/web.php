@@ -65,4 +65,10 @@ Route::get('scrollevent', function () {
 Route::get('image', function () {
     return view('jquerytutorials/imagegallery');
 });
+Route::get('optimage', function () {
+    return view('jquerytutorials/optimiseimggall');
+});
+Route::get('howapp', function () {
+    return view('passwordcomponent/howapp');
+});
 
