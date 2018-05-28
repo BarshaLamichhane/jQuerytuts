@@ -13,19 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
             $(document).ready(function(){
-                $('header').css("background-color","grey")
+                $('header').css("background-color","white")
                         .css("width","1850px")
                         .css("height","120px");
-                        $('body').css("background-color","grey")
-                var height=$('header').height();
-                $(window).scroll(function(){
-                    if($(window).scrollTop()>height){
-                        $('header').addClass('.img-fluid.img-thumbnail.images');
-
-
-                    }
-                    
-                });
+                       
+                
             $(".card").css("margin","0 auto");
             $("#howtitle").css("text-align","center");
             $("#desctitle").css("text-align","center");
@@ -33,14 +25,14 @@
                         .css("margin-top","10px")
                         .css("border-color","white");
             $('.card-footer').css("background-color","orange")
-            .css("text-align","center");
-           
-    
-            });
-            
-                        
-        </script>
-    
+                            .css("text-align","center");
+            $('img.img-thumbnails.how').css("height","500px")
+                                        .css("width","300px")
+                                        .css("margin-left","400px");
+            $('.card-header').css("background-color"," #00b197")
+                                .css("color","white");
+            });                
+        </script>    
 </head>
 <body>
     <header> 
@@ -48,13 +40,13 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="card" style="max-width: 50rem;">
+            <div class="card" style="max-width:1280px;">
                 <div class="card-header">
                     <h1 id="howtitle">How App Title</h1>
                 </div>
                 <div class="card-body">
                     <picture>
-                        <img src="http://thehowapp.com/img/demo-screen-1.jpg" class="img-fluid img-thumbnails" height:"100px" alt="">  
+                        <img src="http://thehowapp.com/img/demo-screen-1.jpg" class="img-thumbnails how" alt="">  
                     </picture>
                 </div>
                 <div class="card-body">
@@ -72,18 +64,8 @@
             </div>
         </div>
     </div>
-   
     <script src="https://unpkg.com/sweetalert2@7.20.7/dist/sweetalert2.all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>   
 </body>
-    <style>
-       
-       
-        
-
-        
-    </style>
-
 </html>

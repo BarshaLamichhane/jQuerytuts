@@ -71,4 +71,18 @@ Route::get('optimage', function () {
 Route::get('howapp', function () {
     return view('passwordcomponent/howapp');
 });
+Route::get('imgslide', function () {
+    return view('jquerytutorials/imageslideshow');
+});
+Route::get('function', function () {
+    return view('javascript/function');
+});
+Route::get('time', function () {
+    return view('javascript/time');
+});
+Route::get('timevent', function () {
+    return view('javascript/timingevents');
+});
+
+
 

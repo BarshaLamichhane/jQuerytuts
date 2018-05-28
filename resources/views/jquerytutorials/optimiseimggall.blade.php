@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Reset</title>
+    <title>Image Zoom</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Newsportal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
@@ -17,64 +16,85 @@
             var mainimage=$('#mountain');
             var height= mainimage.css("height","700px");
             var width=mainimage.css("width","1137px");
-            var add=height.height() + 5;
-            //document.write(height.height()+5);
+            var addheight=height.height();
+            var addwidth=width.width();
+            
             $("#enlarge").click(function(){
-                    height=height.
-                    width.width()=width.width()+100;
-                    document.write( height.height());
-                    
+                
+                addheight += 100;
+                addwidth += 100;
+               // height.height(addheight);
+               // width.width(addwidth);
+                mainimage.animate({'height':addheight,
+                                    'width':addwidth
                 });
-                $("#shrink").click(function(){
-                    height -=100;
-                    width -=100;
-                    mainimage.animate();   
-                    
                    
-                });
+               if(addheight >= 1000 || width >= 1437){
+                   addheight =1000;
+                   addwidth =1437;
+                   height.height(addheight);
+                   width.width(addwidth);
+               }
+            }); 
+            $("#unzoome").click(function(){
+               
+               mainimage.animate({
+                   'height':700,
+                   'width':1137
+               },"slow");
 
-
-                $("img.img-fluid.img-thumbnail.images")
-                    .css("height","150px")
-                    .css("width","159px")
-                    .on({
-                        mouseover:function(){
-                            $(this).css({
-                                'cursor':'pointer',
-                                'border-color':'blue'
-                            });
-                        },
-                        mouseout:function(){
-                            $(this).css({
-                                'cursor':'default',
-                                'border-color':''
-                            });
-                        },
-                        click:function(){
-                            var replaceimage=$(this).attr('src');
-                            var effect=$('#imgeffect').val();
-                            var duration=$('#imgduration').val()*1000;
-                            var mountain=$("#mountain");
-                            if(effect=="Fade"){
-                                mountain.fadeOut(duration, function(){
-                                $(this).attr('src',replaceimage);
+            });
+            $("#shrink").click(function(){
+                addheight -= 100;
+                addwidth -= 100;
+                //height.height(addheight);
+                //width.width(addwidth);
+                mainimage.animate({'height':addheight,
+                                    'width':addwidth
+                }); 
+                if(addheight <= 400 || width <= 837){
+                   addheight =400;
+                   addwidth =837;
+                   height.height(addheight);
+                   width.width(addwidth);
+               }
+                   
+            });
+            $("img.img-fluid.img-thumbnail.images")
+                .css("height","150px")
+                .css("width","159px")
+                .on({
+                    mouseover:function(){
+                        $(this).css({
+                            'cursor':'pointer',
+                            'border-color':'blue'
+                        });
+                    },
+                    mouseout:function(){
+                        $(this).css({
+                            'cursor':'default',
+                            'border-color':''
+                        });
+                    },
+                    click:function(){
+                        var replaceimage=$(this).attr('src');
+                        var effect=$('#imgeffect').val();
+                        var duration=$('#imgduration').val()*1000;
+                        var mountain=$("#mountain");
+                        if(effect=="Fade"){
+                            mountain.fadeOut(duration, function(){
+                            $(this).attr('src',replaceimage);
 
                             }).fadeIn(duration);
-
-                            }
-                            else{
-                                mountain.slideUp(duration, function(){
-                                $(this).attr('src',replaceimage);
+                        }
+                        else{
+                            mountain.slideUp(duration, function(){
+                            $(this).attr('src',replaceimage);
 
                             }).slideDown(duration);
-
-                            }
-                        
-                        }
-                    });
-                
-               
-            
+                        }    
+                    }
+                });       
         });       
     </script>
 </head>
@@ -100,6 +120,7 @@
                 </select>
             <input type="button" id="enlarge" value="Enlarge"/>
             <input type="button" id="shrink" value="Shrink"/>
+            <input type="button" id="unzoome" value="unzoome"/>
             <picture>
                 <img id="mountain" src="/images/mountain.jpg" class="img-fluid img-thumbnail" alt="imagess" />
                  <div id="imagegal">
@@ -112,6 +133,8 @@
                     <img src="/images/mountain.jpg" class="img-fluid img-thumbnail images" alt="imagess"/>    
                  </div>
             </picture>
+            <div id="add"></div>
+            <div id="addd"></div>
         </div>
     </div>
 </body>
