@@ -8,46 +8,49 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <style>
+        .cardimg{
+            height: 32em;
+            width: 41em;
+        }
+        .footerimg{
+            height: 12.5em;
+            width:12.5em;
+            margin-top:-2em;
+        }
+    </style>
     <script src="https://unpkg.com/sweetalert2@7.20.7/dist/sweetalert2.all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
-            $(document).ready(function(){
-                $('header').css("background-color","white")
-                        .css("width","1850px")
-                        .css("height","120px");
-                       
+        $(document).ready(function(){
+                
                 
             $(".card").css("margin","0 auto");
             $("#howtitle").css("text-align","center");
-            $("#desctitle").css("text-align","center");
-            $('.img-fluid.img-thumbnail.images').css("margin-left","825px")
-                        .css("margin-top","10px")
-                        .css("border-color","white");
+            $('.img-fluid.img-thumbnail.howlogo').css("border-color","white")
+                                                .css("height","12.5em")
+                                                .css("width","15em");
             $('.card-footer').css("background-color","orange")
-                            .css("text-align","center");
-            $('img.img-thumbnails.how').css("height","500px")
-                                        .css("width","300px")
-                                        .css("margin-left","400px");
+                            .css("text-align","center")
+                            .css("height","10em");
             $('.card-header').css("background-color"," #00b197")
                                 .css("color","white");
             });                
-        </script>    
+    </script>    
 </head>
 <body>
-    <header> 
-        <img src="/images/how.jpg"  class="img-fluid img-thumbnail images" height:"200px" width="200px" id="logo" alt="">    
-    </header>
+    <div class="text-center"> 
+        <img src="/images/how.jpg"  class=" img-fluid img-thumbnail howlogo img-responsive center" alt="">    
+    </div>
     <div class="container">
         <div class="row">
-            <div class="card" style="max-width:1280px;">
+            <div class="card" style="max-width:43.75em;">
                 <div class="card-header">
                     <h1 id="howtitle">How App Title</h1>
                 </div>
-                <div class="card-body">
-                    <picture>
-                        <img src="http://thehowapp.com/img/demo-screen-1.jpg" class="img-thumbnails how" alt="">  
-                    </picture>
+                <div class="card-body text-center">
+                        <img src="https://www.davidreneke.com/wp-content/uploads/2017/07/Spiral.jpg" class="cardimg img-thumbnail img-responsive center" alt="">  
                 </div>
                 <div class="card-body">
                     <p class="card-text"> since the 1500s, when an unknown printer took a galley of type and scrambled it to
@@ -58,14 +61,11 @@
                     </p>   
                 </div>
                 <div class="card-footer">    
-                     <img src="http://thehowapp.com/img/google-play-badge.svg"  height:"200px" width="200px" alt="">
-                     <img src="http://thehowapp.com/img/app-store-badge.svg"  height:"200px" width="200px" alt="">       
+                     <img src="http://thehowapp.com/img/google-play-badge.svg" class="footerimg img-responsive center" alt="">
+                     <img src="http://thehowapp.com/img/app-store-badge.svg" class="footerimg img-responsive center" alt="">       
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://unpkg.com/sweetalert2@7.20.7/dist/sweetalert2.all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>   
+    </div> 
 </body>
 </html>
