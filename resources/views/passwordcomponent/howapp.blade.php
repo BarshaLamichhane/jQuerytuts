@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <style>
-        .cardimg{
-            height: 32em;
-            width: 41em;
-        }
-        .footerimg{
-            height: 12.5em;
-            width:12.5em;
-            margin-top:-2em;
-        }
-    </style>
     <script src="https://unpkg.com/sweetalert2@7.20.7/dist/sweetalert2.all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
+        function small(){
+            if($(window).width()<=600){
+                $('.footerimg').css("height","8em")
+                            .css("width","8em");           
+                $('.img-fluid.img-thumbnail.howlogo').css("border-color","white")
+                                                .css("height","9em")
+                                                .css("width","10em");
+            }
+        }
         $(document).ready(function(){
                 
                 
@@ -33,9 +31,16 @@
                                                 .css("width","15em");
             $('.card-footer').css("background-color","orange")
                             .css("text-align","center")
-                            .css("height","10em");
+                            
             $('.card-header').css("background-color"," #00b197")
+                                .css("overflow","hidden")    
                                 .css("color","white");
+            $('.cardimg').css("height","32em")
+                         .css("width","41em");
+            $('.footerimg').css("height","12.5em")
+                            .css("width","12.5em");
+                            
+            small();
             });                
     </script>    
 </head>

@@ -83,6 +83,12 @@ Route::get('time', function () {
 Route::get('timevent', function () {
     return view('javascript/timingevents');
 });
+Route::get('animation', function () {
+    return view('jquerytutorials/animation');
+});
+Route::get('progressbar', function () {
+    return view('jquerytutorials/progressbar');
+});
 
 
 
