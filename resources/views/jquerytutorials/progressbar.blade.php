@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Animate</title>
+    <title>Progressbar</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,25 +13,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#outerdiv').css('background-color','white')
-                            .css('border','2px solid #EEEEEE')
-                           .css("height","40px")
-                           .css("width","500px")
-                           .css("border-radius","0px")
-                           .css("margin-top","20px");
-            $('#innerdiv').css('background-color','green')
+            $('#outerdiv').css("position","relative")
+                          .css('background-color','white')
+                          .css('border','2px solid #EEEEEE')
+                          .css("height","40px")
+                          .css("width","500px")
+                          .css("border-radius","0px")
+                          .css("margin-top","20px");
+            $('#innerdiv') .css("position","relative")
+                            .css('background-color','green')
                            .css("height","20px")
                            .css("border-radius","1px")
-                           .css("width","500px")
+                           .css("width","0px")
                            .css("margin-top","8px");
-           
-            //$("button").click(function(){
-               
-
-                
-
-           // });
-           
+            $('#text').css("position","relative")
+                        .css("margin-top","30px")
+                        
+            
+            var widthadd=$('#innerdiv').width();
+            
+            $("button").click(function(){
+                var percentage=$('#percentage').val();
+                widthadd=(percentage*500)/100;
+                $("#innerdiv").animate({width:$("#innerdiv").width(widthadd)},5000);
+                $("#text").html(percentage+ " % completed");
+                //$("#innerdiv").width(widthadd);
+               if(percentage==100){
+                   swal({title:'congratulations', text:'your progress bar is completed'}).then((result) => {
+                        if (result.value) {
+                        location.reload(true);
+                        }
+                    });
+                }   
+            });   
         });       
     </script>
 </head>
@@ -54,9 +68,9 @@
                 </optgroup>
             </select>
             <div class="progress" id="outerdiv">
-                <div class="progress-bar progress-bar-striped active " id="innerdiv" >
-                </div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="innerdiv" ></div>
             </div>
+            <div id="text" class="text-center"></div>
         </div>   
     </div>
 </body>

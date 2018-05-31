@@ -89,6 +89,12 @@ Route::get('animation', function () {
 Route::get('progressbar', function () {
     return view('jquerytutorials/progressbar');
 });
+Route::get('password', function () {
+    return view('jquerytutorials/password');
+});
+Route::get('pass', function () {
+    return view('jquerytutorials/passopt');
+});
 
 
 
