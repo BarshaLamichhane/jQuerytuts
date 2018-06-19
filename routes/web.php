@@ -95,6 +95,9 @@ Route::get('password', function () {
 Route::get('pass', function () {
     return view('jquerytutorials/passopt');
 });
+Route::get('this', function () {
+    return view('jquerytutorials/thisexample');
+});
 
 
 
